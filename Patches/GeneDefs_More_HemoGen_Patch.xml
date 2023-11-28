@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>More Hemogenic Genes</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+             <operations>
+                <!--MoreHemogens Patch-->
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs</xpath>
+                    <value>
+                        <GeneDef Name="MoreHemogenGenesBase" Abstract="True">
+                            <exclusionTags>
+                                <li>MoreHemogensXclusion</li>
+                            </exclusionTags>
+                        </GeneDef>
+                    </value>
+                </li>
+                <li Class="PatchOperationAttributeAdd">
+                    <xpath>Defs/GeneDef[starts-with(defName,'HemogenDrain') or starts-with(defName,'HemogenRecovery')]</xpath>
+                    <attribute>ParentName</attribute>
+                    <value>MoreHemogenGenesBase</value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

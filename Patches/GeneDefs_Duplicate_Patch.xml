@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Biotech Gene Variety</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+        <operations>
+            <!--TradePrice Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="TradePriceGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>TradePriceXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'TDP')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>TradePriceGenesBase</value>
+            </li>
+
+            <!--SocialImpact Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="SocialImpactGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>SocialImpactXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'SLI')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>SocialImpactGenesBase</value>
+            </li>
+
+            <!--MeleeDodge Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="MeleeDodgeGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>MeleeDodgeXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'MLD')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>MeleeDodgeGenesBase</value>
+            </li>
+
+            <!--MeleeHit Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="MeleeHitGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>MeleeHitXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'MLI')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>MeleeHitGenesBase</value>
+            </li>   
+
+            <!--ShootAccuracy Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ShootAccuracyGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ShootAccuracyXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'AIM')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ShootAccuracyGenesBase</value>
+            </li> 
+
+            <!--AimDelay Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="AimDelayGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>AimDelayXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'ADF')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>AimDelayGenesBase</value>
+            </li>
+
+            <!--Learning Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="LearningGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>LearningXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'GLR')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>LearningGenesBase</value>
+            </li>
+        </operations>   
+    </match>
+    </Operation>
+</Patch>

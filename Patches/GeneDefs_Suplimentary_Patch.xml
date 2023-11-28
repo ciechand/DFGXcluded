@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Biotech Gene Variety</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+        <operations>
+            <!--Consciousness Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ConsciousnessGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ConsciousnessXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'CNS')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ConsciousnessGenesBase</value>
+            </li>
+
+            <!--ChildGrowth Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ChildGrowthGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ChildGrowthXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'CGR')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ChildGrowthGenesBase</value>
+            </li>
+
+            <!--AdultGrowth Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="AdultGrowthGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>AdultGrowthXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'AGR')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>AdultGrowthGenesBase</value>
+            </li>
+
+            <!--RestRate Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="RestRateGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>RestRateXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'RST')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>RestRateGenesBase</value>
+            </li>
+
+            <!--PainResist Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="PainResistGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>PainResistXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'PAN')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>PainResistGenesBase</value>
+            </li>
+
+            <!--ResearchSpeed Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ResearchSpeedGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ResearchSpeedXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'RSS')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ResearchSpeedGenesBase</value>
+            </li>
+
+            <!--MentalBreak Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="MentalBreakGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>MentalBreakXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'MBT')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>MentalBreakGenesBase</value>
+            </li>
+        </operations>   
+    </match>
+    </Operation>
+</Patch>

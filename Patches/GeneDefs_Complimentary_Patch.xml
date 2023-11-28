@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Biotech Gene Variety</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+        <operations>
+            <!--Manipulation Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ManipulationGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ManipulationXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'MAN')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ManipulationGenesBase</value>
+            </li>
+
+            <!--Movement Speed Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="MovementSpeedGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>MovementSpeedXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'MVE')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>MovementSpeedGenesBase</value>
+            </li>
+
+            <!--GlobalWorkspeed Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="GlobalWorkSpeedGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>GlobalWorkSpeedXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'GLS')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>GlobalWorkSpeedGenesBase</value>
+            </li>
+
+            <!--Breathing Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="BreathingGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>BreathingXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'BTH')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>BreathingGenesBase</value>
+            </li>
+
+            <!--CarryCapacity Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="CarryCapacityGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>CarryCapacityXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'CRC')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>CarryCapacityGenesBase</value>
+            </li>
+        </operations>   
+    </match>
+    </Operation>
+</Patch>

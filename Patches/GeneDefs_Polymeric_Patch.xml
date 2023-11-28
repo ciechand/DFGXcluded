@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Biotech Gene Variety</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+        <operations>
+            <!--HeatResist Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="HeatResistGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>HeatResistXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'HTR')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>HeatResistGenesBase</value>
+            </li>
+
+            <!--ColdResist Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ColdResistGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ColdResistXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'CDR')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ColdResistGenesBase</value>
+            </li>
+
+            <!--ToxicResist Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ToxicResistGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ToxicResistXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'TXR')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ToxicResistGenesBase</value>
+            </li>
+
+            <!--Beauty Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="BeautyGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>BeautyXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'BEU')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>BeautyGenesBase</value>
+            </li>
+
+            <!--ImmunityGain Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ImmunityGainGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ImmunityGainXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'IMG')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ImmunityGainGenesBase</value>
+            </li>
+
+            <!--ImcomingDamage Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="ImcomingDamageGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>ImcomingDamageXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'TGH')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>ImcomingDamageGenesBase</value>
+            </li>
+
+            <!--MeatAmout Patch-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <GeneDef Name="MeatAmoutGenesBase" Abstract="True">
+                        <exclusionTags>
+                            <li>MeatAmoutXclusion</li>
+                        </exclusionTags>
+                    </GeneDef>
+                </value>
+            </li>
+            <li Class="PatchOperationAttributeAdd">
+                <xpath>Defs/GeneDef[starts-with(defName,'MTA')]</xpath>
+                <attribute>ParentName</attribute>
+                <value>MeatAmoutGenesBase</value>
+            </li>
+        </operations>   
+    </match>
+    </Operation>
+</Patch>
